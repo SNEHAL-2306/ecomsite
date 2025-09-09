@@ -21,5 +21,15 @@ This project was created for learning and practicing Django fundamentals while b
 - **Database:** SQLite (default, can be changed to PostgreSQL/MySQL)
 - **Version Control:** Git & GitHub
 
----
+---## 📸 Screenshots
+
+### 🏠 Home Page
+![Home Page](screenshots/home.png)
+
+### 🛒 Cart Page
+![Cart Page](screenshots/cart.png)
+
+### 🔑 Login Page
+![Login Page](screenshots/login.png)
+
 
