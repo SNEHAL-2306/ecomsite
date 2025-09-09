@@ -1,0 +1,42 @@
+{% extends 'store/base.html' %}
+{% block title %}Products | EcomSite{% endblock %}
+{% block content %}
+<div class="container py-5">
+
+  <h2 class="mb-4 fw-bold text-center">🛍 Explore Our Products</h2>
+
+  <!-- Category Filter -->
+  <div class="d-flex flex-wrap justify-content-center mb-4 gap-2">
+    <a href="{% url 'product_list' %}" class="btn btn-sm btn-outline-secondary {% if not selected_cat %}active{% endif %}">
+      All
+    </a>
+    {% for cat in categories %}
+      <a href="?category={{ cat.id }}" 
+         class="btn btn-sm btn-outline-primary {% if selected_cat|default:'' == cat.id|stringformat:'s' %}active{% endif %}">
+        {{ cat.name }}
+      </a>
+    {% endfor %}
+  </div>
+
+  <!-- Products Grid -->
+  <div class="row g-4">
+    {% for product in products %}
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card h-100 border-0 shadow-sm">
+          {% if product.image %}
+            <img src="{{ product.image.url }}" class="card-img-top" style="object-fit:cover; height:250px;">
+          {% endif %}
+          <div class="card-body text-center">
+            <h6 class="card-title fw-semibold">{{ product.name }}</h6>
+            <p class="text-success fw-bold mb-2">₹{{ product.price|floatformat:2 }}</p>
+            <a href="{% url 'product_detail' product.id %}" class="btn btn-sm btn-outline-dark">View Details</a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-center">No products found in this category.</p>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<div class="container text-center">
+    <h2 class="mt-5">You have been logged out successfully.</h2>
+    <p>Thank you for visiting!</p>
+    <a href="{% url 'login' %}" class="btn btn-primary mt-3">Login Again</a>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'store/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card mx-auto" style="max-width: 600px;">
+        <div class="text-center">
+            <img src="{{ product.image.url }}" class="img-fluid rounded" style="max-height: 400px;" alt="{{ product.name }}">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <h6 class="card-subtitle mb-2 text-muted">₹{{ product.price }}</h6>
+
+            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </form>
+            
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <a href="{% url 'product_list' %}" class="btn btn-secondary">← Back to Products</a>
+    </div>
+</div>
+{% endblock %}
