@@ -24,12 +24,11 @@ This project was created for learning and practicing Django fundamentals while b
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home Page](screenshots/home.png)
+![Home Page](ecomsite/screenshots/home.png)
 
 ### 🛒 Cart Page
-![Cart Page](screenshots/cart.png)
+![Cart Page](ecomsite/screenshots/cart.png)
 
 ### 🔑 Login Page
-![Login Page](screenshots/login.png)
-
+![Login Page](ecomsite/screenshots/login.png)
 
